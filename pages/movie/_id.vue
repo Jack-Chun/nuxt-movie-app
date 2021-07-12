@@ -83,10 +83,12 @@ export default {
   components: {
     Loader
   },
-  async asyncData({ store, params}) {
+  async asyncData({ store, params }) {
     await store.dispatch('movie/searchMovieWithId', {
       id: params.id
     })
+    // asyncData 옵션에서 반환되는 값은,
+    // 자동으로 data 옵션으로 등록되며 반응성을 가집니다.
     return {
       imageLoading: true
     }
@@ -113,7 +115,7 @@ export default {
       return src
     }
   },
-  head () {
+  head() {
     return {
       meta: [
         { hid: 'og:type', property: 'og:type', content: 'website' },

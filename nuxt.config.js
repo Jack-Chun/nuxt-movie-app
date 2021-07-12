@@ -9,8 +9,6 @@ export default {
       { charset: 'utf-8' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'Nuxt Movie App' },
       { hid: 'og:title', property: 'og:title', content: 'Nuxt Movie App / Search' },
@@ -20,9 +18,9 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css'},
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com'},
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap'}
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap' }
     ]
   },
 
@@ -49,6 +47,7 @@ export default {
     '@nuxtjs/dotenv'
   ],
 
+  // @nuxtjs/style-resources
   styleResources: {
     scss: [
       '~/scss/main.scss'
@@ -65,13 +64,13 @@ export default {
     },
     postcss: {
       plugins: [
-        require('autoprefixer')
+        'autoprefixer'
       ]
     }
   },
 
   serverMiddleware: [
-    { 
+    {
       path: '/api/movie',
       handler: '~/server-middleware/movie.js'
     }
